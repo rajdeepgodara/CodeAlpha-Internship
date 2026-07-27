@@ -1,54 +1,25 @@
-const display = document.getElementById("display");
+function reveal(){
 
-function append(value){
-display.value += value;
-}
+const reveals=document.querySelectorAll(".reveal");
 
-function clearDisplay(){
-display.value = "";
-}
+for(let i=0;i<reveals.length;i++){
 
-function deleteLast(){
-display.value = display.value.slice(0,-1);
-}
+const windowHeight=window.innerHeight;
 
-function calculate(){
+const revealTop=reveals[i].getBoundingClientRect().top;
 
-try{
+const revealPoint=150;
 
-display.value = eval(display.value);
+if(revealTop<windowHeight-revealPoint){
 
-}
-
-catch{
-
-display.value = "Error";
+reveals[i].classList.add("active");
 
 }
 
 }
 
-// Keyboard Support
-
-document.addEventListener("keydown",(e)=>{
-
-const key = e.key;
-
-if(!isNaN(key) || "+-*/.%".includes(key)){
-append(key);
 }
 
-else if(key==="Enter"){
-e.preventDefault();
-calculate();
-}
+window.addEventListener("scroll",reveal);
 
-else if(key==="Backspace"){
-deleteLast();
-}
-
-else if(key==="Escape"){
-clearDisplay();
-}
-
-});
+reveal();
