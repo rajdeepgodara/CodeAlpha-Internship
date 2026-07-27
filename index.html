@@ -3,60 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Image Gallery</title>
+<title>Rajdeep Godara | Portfolio</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-<h1>Responsive Image Gallery</h1>
+<header>
 
-<div class="filter-buttons">
-    <button class="active" onclick="filterImages('all')">All</button>
-    <button onclick="filterImages('nature')">Nature</button>
-    <button onclick="filterImages('city')">City</button>
-    <button onclick="filterImages('animals')">Animals</button>
+<nav>
+
+<h2>Rajdeep Godara</h2>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section id="home" class="hero">
+
+<h1>Hello, I'm Rajdeep Godara</h1>
+
+<h3>B.Tech Student | Artificial Intelligence & Machine Learning</h3>
+
+<p>Passionate about Web Development, AI, Machine Learning and Programming.</p>
+
+<a href="#contact" class="btn">Contact Me</a>
+
+</section>
+
+<section id="about" class="section reveal">
+
+<h2>About Me</h2>
+
+<p>
+My name is <strong>Rajdeep Godara</strong>. I am pursuing a <strong>B.Tech in Artificial Intelligence and Machine Learning (AI & ML)</strong>. I enjoy building websites, learning new technologies, solving programming problems, and exploring AI applications.
+</p>
+
+</section>
+
+<section id="skills" class="section reveal">
+
+<h2>Skills</h2>
+
+<div class="cards">
+
+<div class="card">HTML</div>
+<div class="card">CSS</div>
+<div class="card">JavaScript</div>
+<div class="card">Python</div>
+<div class="card">C Programming</div>
+<div class="card">AI & ML</div>
+
 </div>
 
-<div class="gallery">
+</section>
 
-<div class="image nature">
-    <img src="https://picsum.photos/id/1018/600/400" onclick="openLightbox(0)">
+<section id="projects" class="section reveal">
+
+<h2>Projects</h2>
+
+<div class="cards">
+
+<div class="project">
+<h3>Image Gallery</h3>
+<p>Responsive gallery with Lightbox, Filters and Navigation.</p>
 </div>
 
-<div class="image city">
-    <img src="https://picsum.photos/id/1015/600/400" onclick="openLightbox(1)">
+<div class="project">
+<h3>Calculator</h3>
+<p>Responsive Calculator with Keyboard Support.</p>
 </div>
 
-<div class="image animals">
-    <img src="https://picsum.photos/id/1025/600/400" onclick="openLightbox(2)">
-</div>
-
-<div class="image nature">
-    <img src="https://picsum.photos/id/1039/600/400" onclick="openLightbox(3)">
-</div>
-
-<div class="image city">
-    <img src="https://picsum.photos/id/1043/600/400" onclick="openLightbox(4)">
-</div>
-
-<div class="image animals">
-    <img src="https://picsum.photos/id/1074/600/400" onclick="openLightbox(5)">
+<div class="project">
+<h3>Portfolio Website</h3>
+<p>Personal Portfolio using HTML, CSS and JavaScript.</p>
 </div>
 
 </div>
 
-<!-- Lightbox -->
+</section>
 
-<div id="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
+<section id="resume" class="section reveal">
 
-    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+<h2>Resume</h2>
 
-    <img id="lightbox-img">
+<p>Add your resume PDF here.</p>
 
-    <button class="next" onclick="changeImage(1)">&#10095;</button>
+<a href="resume.pdf" class="btn" download>Download Resume</a>
 
-</div>
+</section>
+
+<section id="contact" class="section reveal">
+
+<h2>Contact</h2>
+
+<p>Name : Rajdeep Godara</p>
+
+<p>Department : B.Tech AI & ML</p>
+
+<p>Email : youremail@example.com</p>
+
+<p>Phone : +91-XXXXXXXXXX</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 Rajdeep Godara | Portfolio</p>
+
+</footer>
 
 <script src="script.js"></script>
 
