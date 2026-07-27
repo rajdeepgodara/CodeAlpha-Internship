@@ -1,49 +1,54 @@
-const images = document.querySelectorAll(".gallery img");
+const display = document.getElementById("display");
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-
-let current = 0;
-
-function openLightbox(index){
-    current = index;
-    lightbox.style.display = "flex";
-    lightboxImg.src = images[current].src;
+function append(value){
+display.value += value;
 }
 
-function closeLightbox(){
-    lightbox.style.display = "none";
+function clearDisplay(){
+display.value = "";
 }
 
-function changeImage(step){
-
-    current += step;
-
-    if(current < 0)
-        current = images.length - 1;
-
-    if(current >= images.length)
-        current = 0;
-
-    lightboxImg.src = images[current].src;
+function deleteLast(){
+display.value = display.value.slice(0,-1);
 }
 
-function filterImages(category){
+function calculate(){
 
-    const items = document.querySelectorAll(".image");
+try{
 
-    items.forEach(item=>{
+display.value = eval(display.value);
 
-        if(category==="all" || item.classList.contains(category))
-            item.style.display="block";
-        else
-            item.style.display="none";
-
-    });
-
-    document.querySelectorAll(".filter-buttons button").forEach(btn=>{
-        btn.classList.remove("active");
-    });
-
-    event.target.classList.add("active");
 }
+
+catch{
+
+display.value = "Error";
+
+}
+
+}
+
+// Keyboard Support
+
+document.addEventListener("keydown",(e)=>{
+
+const key = e.key;
+
+if(!isNaN(key) || "+-*/.%".includes(key)){
+append(key);
+}
+
+else if(key==="Enter"){
+e.preventDefault();
+calculate();
+}
+
+else if(key==="Backspace"){
+deleteLast();
+}
+
+else if(key==="Escape"){
+clearDisplay();
+}
+
+});
