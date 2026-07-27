@@ -3,44 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculator</title>
+<title>Responsive Image Gallery</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="calculator">
+<h1>Responsive Image Gallery</h1>
 
-<input type="text" id="display" readonly>
+<div class="filter-buttons">
+    <button class="active" onclick="filterImages('all')">All</button>
+    <button onclick="filterImages('nature')">Nature</button>
+    <button onclick="filterImages('city')">City</button>
+    <button onclick="filterImages('animals')">Animals</button>
+</div>
 
-<div class="buttons">
+<div class="gallery">
 
-<button onclick="clearDisplay()">C</button>
-<button onclick="deleteLast()">⌫</button>
-<button onclick="append('%')">%</button>
-<button onclick="append('/')">÷</button>
+<div class="image nature">
+    <img src="https://picsum.photos/id/1018/600/400" onclick="openLightbox(0)">
+</div>
 
-<button onclick="append('7')">7</button>
-<button onclick="append('8')">8</button>
-<button onclick="append('9')">9</button>
-<button onclick="append('*')">×</button>
+<div class="image city">
+    <img src="https://picsum.photos/id/1015/600/400" onclick="openLightbox(1)">
+</div>
 
-<button onclick="append('4')">4</button>
-<button onclick="append('5')">5</button>
-<button onclick="append('6')">6</button>
-<button onclick="append('-')">−</button>
+<div class="image animals">
+    <img src="https://picsum.photos/id/1025/600/400" onclick="openLightbox(2)">
+</div>
 
-<button onclick="append('1')">1</button>
-<button onclick="append('2')">2</button>
-<button onclick="append('3')">3</button>
-<button onclick="append('+')">+</button>
+<div class="image nature">
+    <img src="https://picsum.photos/id/1039/600/400" onclick="openLightbox(3)">
+</div>
 
-<button onclick="append('0')">0</button>
-<button onclick="append('.')">.</button>
+<div class="image city">
+    <img src="https://picsum.photos/id/1043/600/400" onclick="openLightbox(4)">
+</div>
 
-<button class="equal" onclick="calculate()">=</button>
+<div class="image animals">
+    <img src="https://picsum.photos/id/1074/600/400" onclick="openLightbox(5)">
+</div>
 
 </div>
+
+<!-- Lightbox -->
+
+<div id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+
+    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+
+    <img id="lightbox-img">
+
+    <button class="next" onclick="changeImage(1)">&#10095;</button>
 
 </div>
 
